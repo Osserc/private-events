@@ -1,0 +1,16 @@
+<div class="section-header">Current events</div>
+
+<div id="events">
+  <% @events.each do |event| %>
+    <div class="single-event">
+      <%= render event %>
+      <div>
+        <%= link_to "Show this event", event %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="section-header">Past events</div>
+
+<%= link_to "New event", new_event_path %>

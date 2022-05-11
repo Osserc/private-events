@@ -15,6 +15,21 @@
       <div class="<%= name %>"><%= message %></div>
     <% end %>
 
+    <header>
+      <div class="site-name">
+        The Happenings
+      </div>
+      <div class="user-buttons">
+        <% if user_signed_in? %>
+          <button></button>
+          <button></button>
+        <% else %>
+          <button></button>
+          <button></button>
+        <% end %>
+      </div>
+      </header>
+
     <%= yield %>
   </body>
 </html>

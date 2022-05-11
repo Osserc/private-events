@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+    font-size: 4px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    background-color: ghostwhite;
+    font-size: 4rem;
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgreen;
+    color: white;
+    font-size: 6rem;
+    padding: 1.2rem;
+    font-weight: bold;
+}
+
+ .site-name {
+
+}
