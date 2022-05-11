@@ -1,22 +1,19 @@
-<div id="<%= dom_id event %>">
-  <p>
-    <strong>Title:</strong>
-    <%= event.title %>
-  </p>
+<div class="event-card">
 
-  <p>
-    <strong>Location:</strong>
-    <%= event.location %>
-  </p>
+    <div class="date"><strong>Date:</strong></div>
+    <div class="date-value"><%= event.date %></div>
 
-  <p>
-    <strong>Date:</strong>
-    <%= event.date %>
-  </p>
+    <div class="title"><%= event.title %></div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= event.description %>
-  </p>
+    <div class="location"><strong>Location:</strong></div>
+    <div class="location-value"><%= event.location %></div>
+
+    <div class="description"><%= event.description %></div>
+
+    <div class="favorite"><button><%= link_to "Favorite", event %></button></div>
+
+    <div class="register"><button><%= link_to "Register", event %></button></div>
+
+    <div class="back"><button><%= link_to "Home", events_path %></button></div>
 
 </div>

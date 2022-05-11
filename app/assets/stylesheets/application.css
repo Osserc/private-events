@@ -57,14 +57,14 @@ button {
     font-weight: bold;
 }
 
-.green > button {
+.white .green button, .green button {
     background-color: white;
     color: rgb(140, 236, 140);
     border: none;
     font-size: 4rem;
 }
 
-.white > button {
+.green .white button, .white button {
     background-color: rgb(140, 236, 140);
     color: white;
     border: none;

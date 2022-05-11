@@ -1,0 +1,52 @@
+.preview {
+    display: grid;
+    grid-template: [row1-start] "data title location" 1fr [row1-end]
+    [row2-start] "data-value title location-value" 1fr [row2-end]
+    [row3-start] "description description description" 1fr [row3-end]
+    [row4-end] "favorite register show" [row4-end]
+    / 1fr 1fr 1fr;
+    row-gap: 5rem;
+}
+
+.preview .data {
+    grid-area: data;
+}
+
+.preview .data-value {
+    grid-area: data-value;
+}
+
+.preview .title {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+}
+
+.preview .location {
+    grid-area: location;
+    justify-self: end;
+}
+
+.preview .location-value {
+    grid-area: location-value;
+    justify-self: end;
+}
+
+.preview .description {
+    grid-area: description;
+    align-self: center;
+}
+
+.preview .favorite {
+    grid-area: favorite;
+}
+
+.preview .register {
+    grid-area: register;
+    justify-self: center;
+}
+
+.preview .show {
+    grid-area: show;
+    justify-self: end;
+}

@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @event %>
-
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
+<div class="events-show white">
+  <%= render @event %>
+  
+  <!-- <%# if current_user.id == @event.user.id %> -->
+  <div class="user-actions">
+    <div><button><%= link_to "Edit", edit_event_path(@event) %></button></div>
+    <div><%= button_to "Delete", @event, method: :delete %></div>
+  </div>
+  <!-- <%# end %> -->
 </div>

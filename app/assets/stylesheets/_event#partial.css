@@ -1,50 +1,55 @@
-.preview {
+.event-card {
     display: grid;
     grid-template: [row1-start] "data title location" 1fr [row1-end]
     [row2-start] "data-value title location-value" 1fr [row2-end]
     [row3-start] "description description description" 1fr [row3-end]
-    [row4-end] "favorite register show" [row4-end]
+    [row4-end] "favorite register back" [row4-end]
     / 1fr 1fr 1fr;
+    row-gap: 5rem;
 }
 
-.data {
+.event-card .data {
     grid-area: data;
 }
 
-.data-value {
+.event-card .data-value {
     grid-area: data-value;
 }
 
-.title {
+.event-card .title {
     grid-area: title;
     justify-self: center;
+    align-self: center;
 }
 
-.location {
+.event-card .location {
     grid-area: location;
     justify-self: end;
 }
 
-.location-value {
+.event-card .location-value {
     grid-area: location-value;
     justify-self: end;
 }
 
-.description {
+.event-card .description {
     grid-area: description;
     justify-self: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.favorite {
+.event-card .favorite {
     grid-area: favorite;
 }
 
-.register {
+.event-card .register {
     grid-area: register;
     justify-self: center;
 }
 
-.show {
-    grid-area: show;
+.event-card .back {
+    grid-area: back;
     justify-self: end;
 }
