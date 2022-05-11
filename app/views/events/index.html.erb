@@ -1,16 +1,39 @@
-<div class="section-header">Current events</div>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <div class="single-event">
-      <%= render event %>
-      <div>
-        <%= link_to "Show this event", event %>
-      </div>
+<div class="events-index">
+  <div class="current-event-bloc">
+    <div class="current-events-header">Current events</div>
+  
+    <div class="current-events">
+      <% a = 1; @events.each do |event| %>
+        <% if event.date > Time.now %>
+          <div class="single-event <%= a.odd? ? "green" : "white" %>">
+            <%= render event %>
+            <div>
+              <%= link_to "Show this event", event %>
+            </div>
+          </div>
+          <% a += 1%>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+  
+  <div class="past-event-bloc">
+    <div class="past-events-header">Past events</div>
+  
+    <div class="past-events">
+      <% a = 1; @events.each do |event| %>
+        <% if event.date < Time.now %>
+          <div class="single-event <%= a.odd? ? "green" : "white" %>">
+            <%= render event %>
+            <div>
+              <%= link_to "Show this event", event %>
+            </div>
+          </div>
+          <% a += 1%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+  <%= link_to "New event", new_event_path %>
 </div>
-
-<div class="section-header">Past events</div>
-
-<%= link_to "New event", new_event_path %>

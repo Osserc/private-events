@@ -1,0 +1,34 @@
+.events-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.current-events-bloc {
+    height: 150rem;
+}
+
+.past-events-bloc {
+    height: 50rem;
+}
+
+.current-events, .past-events {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.current-events {
+    max-height: 60vh;
+}
+
+.past-events {
+    max-height: 20vh;
+}
+
+.current-events::-webkit-scrollbar, .past-events::-webkit-scrollbar {
+    display: none;
+}

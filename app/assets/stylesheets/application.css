@@ -21,7 +21,7 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin: 0;
     background-color: ghostwhite;
     font-size: 4rem;
@@ -33,13 +33,38 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightgreen;
+    background-color: rgb(140, 236, 140);
     color: white;
-    font-size: 6rem;
-    padding: 1.2rem;
+    font-size: 8rem;
+    padding: 2.5rem;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.user-buttons  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+button {
+    width: 25rem;
+    height: 6.25rem;
+    border-radius: 25px;
     font-weight: bold;
 }
 
- .site-name {
+.green > button {
+    background-color: white;
+    color: rgb(140, 236, 140);
+    border: none;
+    font-size: 4rem;
+}
 
+.white > button {
+    background-color: rgb(140, 236, 140);
+    color: white;
+    border: none;
+    font-size: 4rem;
 }
