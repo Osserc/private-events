@@ -16,5 +16,7 @@
     </div>
   <% end %>
   
-  <div class="user-actions"><button><%= link_to "Sign in", new_user_session_path, data: { turbo: "false" } %></button></div>
+  <div class="user-actions">
+    <button><%= link_to "Home", events_path %></button>
+  </div>
 </div>
