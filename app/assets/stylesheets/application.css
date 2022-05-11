@@ -50,28 +50,56 @@ header {
     gap: 2.5rem;
 }
 
-button {
+button, .button {
     width: 25rem;
     height: 6.25rem;
     border-radius: 25px;
     font-weight: bold;
 }
 
-.white .green button, .green button {
+.white .green button, .green button, .white .green .button, .green .button {
     background-color: white;
     color: rgb(140, 236, 140);
     border: none;
     font-size: 4rem;
 }
 
-.green .white button, .white button {
+.green .white button, .white button, .green .white .button, .white .button {
     background-color: rgb(140, 236, 140);
     color: white;
     border: none;
     font-size: 4rem;
 }
 
+.green {
+    border: 5px solid white;
+}
+
+.white {
+    border: 5px solid rgb(140, 236, 140);
+}
+
 button a:link, button a:visited, button a:active, button a:hover {
     text-decoration: none;
     color: inherit;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: center;
+    gap: 6.25rem;
+    margin-top: 4rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 4.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
 }

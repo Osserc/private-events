@@ -1,11 +1,11 @@
 <div class="preview">
 
-    <div class="date"><strong>Date:</strong></div>
-    <div class="date-value"><%= event.date %></div>
+    <div class="date">Date</div>
+    <div class="date-value"><%= event.date.strftime("%A, %B %e, %Y") %></div>
 
     <div class="title"><%= event.title %></div>
 
-    <div class="location"><strong>Location:</strong></div>
+    <div class="location">Location</div>
     <div class="location-value"><%= event.location %></div>
 
     <div class="description"><%= event.description.slice(0, 100) %><% if event.description.length > 100 %>(...)<% end %></div>

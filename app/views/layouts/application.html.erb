@@ -15,11 +15,11 @@
       <div class="<%= name %>"><%= message %></div>
     <% end %>
 
-    <header>
+    <header class="green">
       <div class="site-name">
         The Happenings
       </div>
-      <div class="user-buttons green">
+      <div class="user-buttons">
         <% if user_signed_in? %>
           <button><%= link_to "New event", new_event_path %></button>
           <button>My events</button>
@@ -29,7 +29,7 @@
           <button><%= link_to "Sign up", new_user_registration_path, data: { turbo: "false" } %></button>
         <% end %>
       </div>
-      </header>
+    </header>
 
     <%= yield %>
   </body>

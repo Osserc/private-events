@@ -5,10 +5,3 @@
     padding: 2.5rem;
     border-radius: 25px;
 }
-
-.user-actions {
-    display: flex;
-    justify-content: center;
-    gap: 6.25rem;
-    margin-top: 4rem;
-}
