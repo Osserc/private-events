@@ -1,15 +1,12 @@
 <div class="events-index">
-  <div class="current-event-bloc">
-    <div class="current-events-header">Current events</div>
+  <div class="current-events-bloc">
+    <div class="events-header">Current events</div>
   
     <div class="current-events">
       <% a = 1; @events.each do |event| %>
         <% if event.date > Time.now %>
           <div class="single-event <%= a.odd? ? "green" : "white" %>">
-            <%= render event %>
-            <div>
-              <%= link_to "Show this event", event %>
-            </div>
+            <%= render "event_preview", :event => event %>
           </div>
           <% a += 1%>
         <% end %>
@@ -17,23 +14,18 @@
     </div>
   </div>
   
-  <div class="past-event-bloc">
-    <div class="past-events-header">Past events</div>
+  <div class="past-events-bloc">
+    <div class="events-header">Past events</div>
   
     <div class="past-events">
       <% a = 1; @events.each do |event| %>
         <% if event.date < Time.now %>
           <div class="single-event <%= a.odd? ? "green" : "white" %>">
-            <%= render event %>
-            <div>
-              <%= link_to "Show this event", event %>
-            </div>
+            <%= render "event_preview", :event => event %>
           </div>
           <% a += 1%>
         <% end %>
       <% end %>
     </div>
   </div>
-  
-  <%= link_to "New event", new_event_path %>
 </div>

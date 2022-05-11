@@ -1,0 +1,19 @@
+<div class="preview">
+
+    <div class="date"><strong>Date:</strong></div>
+    <div class="date-value"><%= event.date %></div>
+
+    <div class="title"><%= event.title %></div>
+
+    <div class="location"><strong>Location:</strong></div>
+    <div class="location-value"><%= event.location %></div>
+
+    <div class="description"><%= event.description.slice(0, 100) %><% if event.description.length > 100 %>(...)<% end %></div>
+
+    <div class="favorite"><button><%= link_to "Favorite", event %></button></div>
+
+    <div class="register"><button><%= link_to "Register", event %></button></div>
+
+    <div class="show"><button><%= link_to "Show event", event %></button></div>
+
+</div>

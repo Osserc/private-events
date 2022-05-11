@@ -21,11 +21,12 @@
       </div>
       <div class="user-buttons green">
         <% if user_signed_in? %>
+          <button><%= link_to "New event", new_event_path %></button>
           <button>My events</button>
-          <button>Log out</button>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
         <% else %>
-          <button>Sign in</button>
-          <button>Sign up</button>
+          <button><%= link_to "Sign in", new_user_session_path, data: { turbo: "false" } %></button>
+          <button><%= link_to "Sign up", new_user_registration_path, data: { turbo: "false" } %></button>
         <% end %>
       </div>
       </header>

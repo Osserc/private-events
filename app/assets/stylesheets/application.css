@@ -21,12 +21,14 @@
 body {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    gap: 1.2rem;
     margin: 0;
-    background-color: ghostwhite;
+    background-color: rgb(231, 231, 231);
     font-size: 4rem;
+    padding: 1.2rem;
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
 }
 
 header {
@@ -67,4 +69,9 @@ button {
     color: white;
     border: none;
     font-size: 4rem;
+}
+
+button a:link, button a:visited, button a:active, button a:hover {
+    text-decoration: none;
+    color: inherit;
 }
