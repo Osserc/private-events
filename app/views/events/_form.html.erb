@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+  <div><%= form.label :title, style: "display: block" %></div>
+  <div><%= form.text_field :title %></div>
+
+  <div><%= form.label :location, style: "display: block" %></div>
+  <div><%= form.text_field :location %></div>
+
+  <div><%= form.label :date, style: "display: block" %></div>
+  <div><%= form.date_field :date %></div>
+
+  <div><%= form.label :description, style: "display: block" %></div>
+  <div><%= form.text_area :description, cols: "40", rows:"30" %></div>
 
   <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Send", class: "button", data: { turbo: "false" } %>
   </div>
 <% end %>

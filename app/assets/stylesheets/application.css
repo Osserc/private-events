@@ -103,3 +103,7 @@ form {
     align-items: center;
     gap: 1.2rem;
 }
+
+input {
+    width: 60rem;
+}

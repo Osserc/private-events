@@ -1,9 +1,7 @@
-<h1>New event</h1>
-
-<%= render "form", event: @event %>
-
-<br>
-
-<div>
-  <%= link_to "Back to events", events_path %>
+<div class="events-new white">
+  <%= render "form", event: @event %>
+  
+  <div class="user-actions">
+    <button><%= link_to "Home", events_path %></button>
+  </div>
 </div>
