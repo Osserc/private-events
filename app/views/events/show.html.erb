@@ -1,10 +1,10 @@
 <div class="events-show white">
   <%= render @event %>
   
-  <!-- <%# if current_user.id == @event.user.id %> -->
-  <div class="user-actions">
-    <div><button><%= link_to "Edit", edit_event_path(@event) %></button></div>
-    <div><%= button_to "Delete", @event, method: :delete %></div>
-  </div>
-  <!-- <%# end %> -->
+  <% if current_user.id == @event.user.id %>
+    <div class="user-actions">
+      <div><button><%= link_to "Edit", edit_event_path(@event) %></button></div>
+      <div><%= button_to "Delete", @event, method: :delete %></div>
+    </div>
+  <% end %>
 </div>

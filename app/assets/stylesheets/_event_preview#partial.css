@@ -3,7 +3,8 @@
     grid-template: [row1-start] "date title location" 1fr [row1-end]
     [row2-start] "date-value title location-value" 1fr [row2-end]
     [row3-start] "description description description" 1fr [row3-end]
-    [row4-end] "favorite register show" [row4-end]
+    [row4-start] "organizer . ." 1fr [row4-end]
+    [row5-end] "favorite register show" [row5-end]
     / 1fr 1fr 1fr;
     row-gap: 5rem;
 }
@@ -43,6 +44,10 @@
 .preview .description {
     grid-area: description;
     place-self: center;
+}
+
+.preview .organizer {
+    grid-area: organizer;
 }
 
 .preview .favorite {

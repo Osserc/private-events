@@ -1,7 +1,8 @@
 <div class="sign-in white">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
     <div><%= f.label :email %></div>
-    <div><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+    <div><%= f.email_field :email, autocomplete: "email" %></div>
 
     <div><%= f.label :password %></div>
     <div><%= f.password_field :password, autocomplete: "current-password" %></div>

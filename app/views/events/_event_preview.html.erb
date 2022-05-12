@@ -10,6 +10,8 @@
 
     <div class="description"><%= event.description.slice(0, 100) %><% if event.description.length > 100 %>(...)<% end %></div>
 
+    <div class="organizer">Organized by <%= link_to "#{event.user.first_name} #{event.user.last_name}", user_path(id: event.user_id) %></div>
+
     <div class="favorite"><button><%= link_to "Favorite", event %></button></div>
 
     <div class="register"><button><%= link_to "Register", event %></button></div>

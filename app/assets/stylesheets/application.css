@@ -84,6 +84,11 @@ button a:link, button a:visited, button a:active, button a:hover {
     color: inherit;
 }
 
+a:link, a:visited, a:active, a:hover {
+    font-weight: bold;
+    color: inherit;
+}
+
 .user-actions {
     display: flex;
     justify-content: center;

@@ -10,12 +10,6 @@
     border-radius: 25px;
 }
 
-/* .remember {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-} */
-
 input[type=checkbox] {
     width: auto;
     margin-right: 2rem;
