@@ -9,3 +9,8 @@
     padding: 2.5rem;
     border-radius: 25px;
 }
+
+.checkbox {
+    display: flex;
+    width: auto;
+}

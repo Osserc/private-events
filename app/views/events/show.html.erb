@@ -14,4 +14,23 @@
     <div class="events-header white">Attendee list</div>
   
     <%= render "participations/attendees", :list => @event.attendees %>
-  </div>
+</div>
+
+<div class="inviting">
+  <%= form_with do | f | %>
+  <% list = (User.all.to_a - [User.find(@event.user_id)]).sort %>
+  <%= f.collection_check_boxes :user_ids, list, :id, :username, { :item_wrapper_class => "invitee-choice" } do | single | %>
+  
+    <div class="single-invitee">
+      <div><%= single.label %></div>
+      <% if single.object.username == "Merlow" %>
+        <div><%= single.check_box({ checked: true }) %></div>
+      <% else %>
+        <div><%= single.check_box({ checked: false }) %></div>
+      <% end %>
+    </div>
+  
+  <% end %>
+  <%= f.submit %>
+  <% end %>
+</div>

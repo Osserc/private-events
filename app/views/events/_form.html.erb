@@ -21,7 +21,17 @@
   <div><%= form.date_field :date %></div>
 
   <div><%= form.label :description, style: "display: block" %></div>
-  <div><%= form.text_area :description, cols: "40", rows:"30" %></div>
+  <div><%= form.text_area :description, cols: "40", rows:"25" %></div>
+
+  <div class="checkbox">
+    <div><%= form.label :private, style: "display: block" %></div>
+    <div><%= form.check_box :private %></div>
+  </div>
+
+  <div class="checkbox">
+    <div><%= form.label :invite_only, style: "display: block" %></div>
+    <div><%= form.check_box :invite_only %></div>
+  </div>
 
   <div>
     <%= form.submit "Send", class: "button", data: { turbo: "false" } %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_13_124859) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_14_211354) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -19,6 +19,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_13_124859) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.boolean "private"
+    t.boolean "invite_only"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "favoriter_id"
+    t.integer "favorited_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favorited_event_id"], name: "index_favorites_on_favorited_event_id"
+    t.index ["favoriter_id"], name: "index_favorites_on_favoriter_id"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer "invitee_id"
+    t.integer "invited_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["invited_event_id"], name: "index_invitations_on_invited_event_id"
+    t.index ["invitee_id"], name: "index_invitations_on_invitee_id"
   end
 
   create_table "participations", force: :cascade do |t|
