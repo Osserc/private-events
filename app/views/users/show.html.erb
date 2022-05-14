@@ -1,25 +1,53 @@
 <div class="events-header white">Current events</div>
 
-    <div class="current-events">
-      <% a = 1; @user.events.each do |event| %>
-        <% if event.date > Time.now %>
-          <div class="single-event <%= a.odd? ? "green" : "white" %>">
-            <%= render "events/event_preview", :event => event %>
-          </div>
-          <% a += 1%>
-        <% end %>
-      <% end %>
-    </div>
+<div class="current-events">
+  <% a = 1; @user.events.each do |event| %>
+    <% if event.date > Time.now %>
+      <div class="single-event <%= a.odd? ? "green" : "white" %>">
+        <%= render "events/event_preview", :event => event %>
+      </div>
+      <% a += 1%>
+    <% end %>
+  <% end %>
+</div>
 
 <div class="events-header white">Past events</div>
   
-    <div class="past-events">
-      <% a = 1; @user.events.each do |event| %>
-        <% if event.date < Time.now %>
-          <div class="single-event <%= a.odd? ? "green" : "white" %>">
-            <%= render "events/event_preview", :event => event %>
-          </div>
-          <% a += 1%>
-        <% end %>
-      <% end %>
-    </div>
+<div class="past-events">
+  <% a = 1; @user.events.each do |event| %>
+    <% if event.date < Time.now %>
+      <div class="single-event <%= a.odd? ? "green" : "white" %>">
+        <%= render "events/event_preview", :event => event %>
+      </div>
+      <% a += 1%>
+    <% end %>
+  <% end %>
+</div>
+
+
+<div class="events-header white">Registered current events</div>
+
+<div class="current-events">
+  <% a = 1; @user.attended_events.each do |event| %>
+    <% if event.date > Time.now %>
+      <div class="single-event <%= a.odd? ? "green" : "white" %>">
+        <%= render "events/event_preview", :event => event %>
+      </div>
+      <% a += 1%>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="events-header white">Registered past events</div>
+
+<div class="past-events">
+  <% a = 1; @user.attended_events.each do |event| %>
+    <% if event.date < Time.now %>
+      <div class="single-event <%= a.odd? ? "green" : "white" %>">
+        <%= render "events/event_preview", :event => event %>
+      </div>
+      <% a += 1%>
+    <% end %>
+  <% end %>
+</div>
+
