@@ -6,5 +6,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :username, presence: true
 
-  has_many :events
+  has_many :events, dependent: :destroy
+  has_many :participations, foreign_key: :attendee_id
+  has_many :attended_events, through: :participations
+
 end

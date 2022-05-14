@@ -1,0 +1,11 @@
+<div class="attendees-list">
+
+    <div class="attendees-container">
+        <% a = 1; list.each do | attendee| %>
+            <div class="single-attendee <%= a.odd? ? "green" : "white" %>">
+                - <%= link_to "#{attendee.username}", user_path(id: attendee.id) %>
+            </div>
+        <% end %>
+    </div>
+
+</div>

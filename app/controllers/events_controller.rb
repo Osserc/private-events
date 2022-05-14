@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ new create edit update destroy ]
+  before_action :check_author, only: %i[ edit update destroy ]
 
   # GET /events or /events.json
   def index
@@ -66,5 +68,12 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:title, :location, :date, :description)
+    end
+
+    def check_author
+      unless current_user.id == @event.user_id
+        flash[:alert] = "You are not this event's creator."
+        redirect_to event_url(@event)
+      end
     end
 end

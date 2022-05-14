@@ -1,0 +1,29 @@
+.attendees-list {
+    
+}
+
+.attendees-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    row-gap: 5rem;
+    margin: 1.2rem 12.5rem;
+}
+
+.attendees-list .single-attendee {
+    width: 100px;
+    place-self: center;
+}
+
+.single-attendee.green {
+    background-color: rgb(140, 236, 140);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+}
+
+.single-attendee.white {
+    background-color: white;
+    color: rgb(140, 236, 140);
+    padding: 2.5rem;
+    border-radius: 25px;
+}

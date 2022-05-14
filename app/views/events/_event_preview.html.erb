@@ -14,7 +14,15 @@
 
     <div class="favorite"><button><%= link_to "Favorite", event %></button></div>
 
-    <div class="register"><button><%= link_to "Register", event %></button></div>
+    <% if user_signed_in? && current_user.id != event.user_id %>
+        <% if current_user.attended_events.include?(event)%>
+            <div class="register"><%= button_to "Unregister", unregister_path, params: { event: event.id, path: request.path } %></div>
+        <% else %>
+            <div class="register"><%= button_to "Register", register_path, params: { event: event.id, path: request.path } %></div>
+        <% end %>
+    <% else %>
+        <div class="register"></div>
+    <% end %>
 
     <div class="show"><button><%= link_to "Show", event %></button></div>
 

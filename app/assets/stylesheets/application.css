@@ -71,7 +71,6 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 2.5rem;
-    z-index: 1;
 }
 
 button, .button {
@@ -79,6 +78,7 @@ button, .button {
     height: 6.25rem;
     border-radius: 25px;
     font-weight: bold;
+    z-index: 1;
 }
 
 .white .green button, .green button, .white .green .button, .green .button {
