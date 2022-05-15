@@ -16,6 +16,16 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
   helper_method :check_right_user
 
+  def check_inviter(event)
+    if user_signed_in?
+      return true if event.user_id == current_user.id
+      return false
+    else
+      return false
+    end
+  end
+  helper_method :check_inviter
+
   protected
 
   def configure_permitted_parameters

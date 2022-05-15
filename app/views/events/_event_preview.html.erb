@@ -3,6 +3,32 @@
     <div class="date">Date</div>
     <div class="date-value"><%= event.date.strftime("%A, %B %e, %Y") %></div>
 
+    <div class="info">
+        <% if event.private == true %>
+            <div class="private"><button>Private</button></div>
+        <% else %>
+            <div class="private"></div>
+        <% end %>
+    
+        <% if event.invite_only == true %>
+            <div class="restricted"><button>Invite-only</button></div>
+        <% else %>
+            <div class="restricted"></div>
+        <% end %>
+
+        <% if user_signed_in? && event.invite_only == true %>
+            <% if event.invitees.include?(current_user) %>
+                <div class="invited"><button>Invited</button></div>
+            <% elsif event.user_id == current_user.id %>
+                <div class="invited"></div>
+            <% else %>
+                <div class="invited"><button>Not invited</button></div>
+            <% end %>
+        <% else %>
+            <div class="invited"></div>
+        <% end %>
+    </div>
+
     <div class="title"><%= event.title %></div>
 
     <div class="location">Location</div>

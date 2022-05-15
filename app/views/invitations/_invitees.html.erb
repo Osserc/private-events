@@ -1,0 +1,11 @@
+<div class="invitees-list">
+
+    <div class="invitees-container">
+        <% list.each do | invitee| %>
+            <div class="single-invitee white">
+                - <%= link_to "#{invitee.username}", user_path(id: invitee.id) %>
+            </div>
+        <% end %>
+    </div>
+
+</div>

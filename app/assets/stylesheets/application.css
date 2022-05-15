@@ -136,3 +136,75 @@ form {
 input {
     width: 60rem;
 }
+
+.attendees-and-invitations {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.attendees-bloc, .invitees-bloc, .invitation-bloc {
+    flex: 1;
+
+}
+
+.invitation-list {
+    background-color: white;
+    color: rgb(140, 236, 140);
+    margin: 0 12.5rem;
+    margin-top: 4rem;
+    padding: 2.5rem;
+    border-radius: 25px;
+    max-height: 100rem;
+}
+
+.a-i-header {
+    background-color: rgb(140, 236, 140);
+    color: white;
+    font-size: 6rem;
+    padding: 2.5rem;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.single-invitation {
+    display: flex;
+    background-color: rgb(140, 236, 140);
+    color: white;
+    font-size: 6rem;
+    padding: 2.5rem;
+    font-weight: bold;
+    border-radius: 25px;
+    gap: 1.2rem;
+}
+
+.invitation-list form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 125px);
+    row-gap: 5rem;
+    margin: 1.2rem 12.5rem;
+    max-height: 100rem;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.invitation-list form::-webkit-scrollbar {
+    display: none;
+}
+
+.form-btn {
+    width: 25rem;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 1.2rem;
+    background-color: white;
+    color: rgb(140, 236, 140);
+    font-size: 4rem;
+    place-self: center;
+    grid-column-end: last-line;
+}
+
+.single-invitation + .form-btn {
+    grid-column-start: 1;
+}

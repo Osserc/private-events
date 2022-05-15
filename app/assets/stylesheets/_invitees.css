@@ -1,4 +1,4 @@
-.attendees-container {
+.invitees-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
     row-gap: 5rem;
@@ -9,23 +9,16 @@
     scrollbar-width: none;
 }
 
-.attendees-container::-webkit-scrollbar {
+.invitees-container::-webkit-scrollbar {
     display: none;
 }
 
-.attendees-list .single-attendee {
+.invitees-list .single-invitee {
     width: 100px;
     place-self: center;
 }
 
-.single-attendee.green {
-    background-color: rgb(140, 236, 140);
-    color: white;
-    padding: 2.5rem;
-    border-radius: 25px;
-}
-
-.single-attendee.white {
+.single-invitee {
     background-color: white;
     color: rgb(140, 236, 140);
     padding: 2.5rem;

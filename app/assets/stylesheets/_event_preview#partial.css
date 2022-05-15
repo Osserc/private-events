@@ -1,6 +1,6 @@
 .preview {
     display: grid;
-    grid-template: [row1-start] "date title location" 1fr [row1-end]
+    grid-template: [row1-start] "date info location" 1fr [row1-end]
     [row2-start] "date-value title location-value" 1fr [row2-end]
     [row3-start] "description description description" 1fr [row3-end]
     [row4-start] "organizer . ." 1fr [row4-end]
@@ -18,12 +18,42 @@
 .preview .date-value {
     grid-area: date-value;
     font-size: 4.5rem;
+    align-self: end;
+}
+
+.preview .info {
+    grid-area: info;
+}
+
+.preview .info {
+    grid-area: info;
+    display: grid;
+    grid-template: [row1-start] "private restricted invited" [row1-end]
+    / 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.preview .private, .preview .restricted, .preview .invited {
+    justify-self: center;
+    font-weight: bold;
+    place-self: center;
+}
+
+.preview .private {
+    grid-area: private;
+}
+
+.preview .restricted {
+    grid-area: restricted;
+}
+
+.preview .invited {
+    grid-area: invited;
 }
 
 .preview .title {
     grid-area: title;
     justify-self: center;
-    align-self: center;
     font-weight: bold;
     font-size: 8rem;
 }
@@ -39,6 +69,7 @@
     grid-area: location-value;
     justify-self: end;
     font-size: 4.5rem;
+    align-self: end;
 }
 
 .preview .description {
