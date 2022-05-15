@@ -4,10 +4,12 @@
   
     <div class="current-events">
       <% a = 1; Event.current.each do |event| %>
-        <div class="single-event <%= a.odd? ? "green" : "white" %>">
-          <%= render "event_preview", :event => event %>
-        </div>
-        <% a += 1%>
+        <% unless event.private == true && !check_right_user(event) %>
+          <div class="single-event <%= a.odd? ? "green" : "white" %>">
+            <%= render "event_preview", :event => event %>
+          </div>
+          <% a += 1%>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -17,10 +19,12 @@
   
     <div class="past-events">
       <% a = 1; Event.past.each do |event| %>
-        <div class="single-event <%= a.odd? ? "green" : "white" %>">
-          <%= render "event_preview", :event => event %>
-        </div>
-        <% a += 1%>
+        <% unless event.private == true && !check_right_user(event) %>
+          <div class="single-event <%= a.odd? ? "green" : "white" %>">
+            <%= render "event_preview", :event => event %>
+          </div>
+          <% a += 1%>
+        <% end %>
       <% end %>
     </div>
   </div>

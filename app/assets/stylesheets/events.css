@@ -61,3 +61,40 @@
     padding: 2.5rem;
     border-radius: 25px;
 }
+
+.events-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(140, 236, 140);
+    margin: 1.2rem 35%;
+    padding: 2.5rem;
+    border-radius: 25px;
+}
+
+.events-show {
+    background-color: white;
+    color: rgb(140, 236, 140);
+    margin: 0 12.5rem;
+    padding: 2.5rem;
+    border-radius: 25px;
+}
+
+.events-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(140, 236, 140);
+    margin: 1.2rem 35%;
+    padding: 2.5rem;
+    border-radius: 25px;
+}
+
+.checkbox {
+    display: flex;
+    width: auto;
+}

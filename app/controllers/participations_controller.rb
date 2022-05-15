@@ -3,11 +3,15 @@ class ParticipationsController < ApplicationController
     before_action :authenticate_user!
 
     def register
-        @participation = @event.participations.create(attendee:current_user)
-        if @participation.save
-            redirect_to "#{(params[:path])}", notice: "You are registered!"
+        if @event.invite_only == false || (@event.invite_only == true && @event.invitees.include?(current_user))
+            @participation = @event.participations.create(attendee:current_user)
+            if @participation.save
+                redirect_to "#{(params[:path])}", notice: "You are registered!"
+            else
+                redirect_to "#{(params[:path])}", alert: "Registration failed!"
+            end
         else
-            redirect_to "#{(params[:path])}", alert: "Registration failed!"
+            redirect_to "#{(params[:path])}", alert: "You are not invited to this event."
         end
     end
 

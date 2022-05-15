@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
     before_action :set_event
     before_action :authenticate_user!
-    before_action :check_organizer, only: %i[ generate_invite_list ]
+    before_action :deny_not_organizer, only: %i[ generate_invite_list ]
 
     def generate_invite_list
         params[:invitees].delete_if(&:blank?)
@@ -24,7 +24,7 @@ class InvitationsController < ApplicationController
         @event = Event.find(params[:event])
     end
 
-    def check_organizer
+    def deny_not_organizer
         unless current_user.id == @event.user_id
           flash[:alert] = "You are not this event's creator."
           redirect_to event_url(@event)
