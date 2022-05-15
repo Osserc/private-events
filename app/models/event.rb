@@ -11,7 +11,7 @@ class Event < ApplicationRecord
     has_many :invitees, through: :invitations
 
     has_many :favorites, foreign_key: :favorited_event_id
-    has_many :favoritors, through: :favorites
+    has_many :favoriters, through: :favorites
 
     scope :current, -> { where("date > ?", Time.now) }
     scope :past, -> { where("date < ?", Time.now) }

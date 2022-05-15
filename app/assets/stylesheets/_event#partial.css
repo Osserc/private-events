@@ -52,6 +52,7 @@
 
 .event-card .favorite {
     grid-area: favorite;
+    justify-self: start;
 }
 
 .event-card .register {

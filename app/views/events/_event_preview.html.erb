@@ -12,7 +12,15 @@
 
     <div class="organizer">Organized by <%= link_to "#{event.user.first_name} #{event.user.last_name}", user_path(id: event.user_id) %></div>
 
-    <div class="favorite"><button><%= link_to "Favorite", event %></button></div>
+    <% if user_signed_in? %>
+        <% if current_user.favorited_events.include?(event)%>
+            <div class="favorite"><%= button_to "Unfavorite", remove_from_favorites_path, params: { event: event.id, path: request.path } %></div>
+        <% else %>
+            <div class="favorite"><%= button_to "Favorite", add_to_favorites_path, params: { event: event.id, path: request.path } %></div>
+        <% end %>
+    <% else %>
+        <div class="favorite"></div>
+    <% end %>
 
     <% if user_signed_in? && current_user.id != event.user_id %>
         <% if current_user.attended_events.include?(event)%>

@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: %i[ new create edit update destroy ]
-  before_action :check_author, only: %i[ edit update destroy ]
+  before_action :check_organizer, only: %i[ edit update destroy ]
+  before_action :check_private_access, only: %i[ show ]
 
   # GET /events or /events.json
   def index
@@ -70,10 +71,27 @@ class EventsController < ApplicationController
       params.require(:event).permit(:title, :location, :date, :description, :private, :invite_only)
     end
 
-    def check_author
+    def check_organizer
       unless current_user.id == @event.user_id
         flash[:alert] = "You are not this event's creator."
         redirect_to event_url(@event)
       end
     end
+
+    def check_private_access
+      if check_private && !check_invited
+        flash[:alert] = "You do not have permission to view this event."
+        redirect_back(fallback_location: root)
+    end
+
+    def check_private
+      return true if @event.private == true
+      return false
+    end
+
+    def check_invited
+      return true if @event.invitees.include?(current_user)
+      return false
+    end
+
 end

@@ -17,13 +17,16 @@
 </div>
 
 <div class="inviting">
-  <%= form_with do | f | %>
+  <%= form_with url: generate_invite_list_path do | f | %>
   <% list = (User.all.to_a - [User.find(@event.user_id)]).sort %>
-  <%= f.collection_check_boxes :user_ids, list, :id, :username, { :item_wrapper_class => "invitee-choice" } do | single | %>
+  <%= f.hidden_field :event, :value => @event.id %>
+  <%= f.hidden_field :path, :value => request.path %>
+
+  <%= f.collection_check_boxes :invitees, list, :id, :username, { :item_wrapper_class => "invitee-choice" } do | single | %>
   
     <div class="single-invitee">
       <div><%= single.label %></div>
-      <% if single.object.username == "Merlow" %>
+      <% if @event.invitees.include?(single.object) %>
         <div><%= single.check_box({ checked: true }) %></div>
       <% else %>
         <div><%= single.check_box({ checked: false }) %></div>
@@ -31,6 +34,6 @@
     </div>
   
   <% end %>
-  <%= f.submit %>
+  <%= f.submit "Invite" %>
   <% end %>
 </div>
