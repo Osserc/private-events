@@ -1,53 +1,91 @@
-<div class="events-header white">Current events</div>
+<div class="user-panel">
 
-<div class="current-events">
-  <% a = 1; @user.events.each do |event| %>
-    <% if event.date > Time.now %>
-      <div class="single-event <%= a.odd? ? "green" : "white" %>">
-        <%= render "events/event_preview", :event => event %>
+  <div class="user-profile">
+    <div class="events-header white username">
+      <div><%= @user.first_name + " " + @user.last_name %></div>
+      <div class="profile-username">known as: <strong><%= @user.username %></strong></div>
+    </div>
+
+    <% if check_panel_owner %>
+      <div class="user-actions">
+        <div><button><%= link_to "Edit profile", edit_user_registration_path, data: { turbo: "false" } %></button></div>
       </div>
-      <% a += 1%>
-    <% end %>
-  <% end %>
-</div>
 
-<div class="events-header white">Past events</div>
+      <div class="events-header white">Favorites</div>
+
+      <div class="favorites">
+        <% a = 1; @user.favorited_events.each do |event| %>
+          <div class="single-event <%= a.odd? ? "green" : "white" %>">
+            <%= render "favorites/favorites", :event => event %>
+          </div>
+          <% a += 1%>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="random-infos">
+        <div class="events-info green">
+          <div>Total</div>
+          <div>events</div>
+          <div><strong><%= @user.events.count %></strong></div>
+        </div>
+        <div class="events-info white">
+          <div>Current</div>
+          <div><strong><%= @user.events.current.count %></strong></div>
+        </div>
+        <div class="events-info green">
+          <div>Past</div>
+          <div><strong><%= @user.events.past.count %></strong></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="user-events">
+    <div class="events-header white">Current events</div>
+    
+    <div class="current-events">
+      <% a = 1; @user.events.current.each do |event| %>
+        <div class="single-event <%= a.odd? ? "green" : "white" %>">
+          <%= render "events/event_preview", :event => event %>
+        </div>
+        <% a += 1%>
+      <% end %>
+    </div>
+    
+    <div class="events-header white">Past events</div>
+    
+    <div class="past-events">
+      <% a = 1; @user.events.past.each do |event| %>
+        <div class="single-event <%= a.odd? ? "green" : "white" %>">
+          <%= render "events/event_preview", :event => event %>
+        </div>
+        <% a += 1%>
+      <% end %>
+    </div>
+  </div>
   
-<div class="past-events">
-  <% a = 1; @user.events.each do |event| %>
-    <% if event.date < Time.now %>
-      <div class="single-event <%= a.odd? ? "green" : "white" %>">
-        <%= render "events/event_preview", :event => event %>
-      </div>
-      <% a += 1%>
-    <% end %>
-  <% end %>
-</div>
-
-
-<div class="events-header white">Registered current events</div>
-
-<div class="current-events">
-  <% a = 1; @user.attended_events.each do |event| %>
-    <% if event.date > Time.now %>
-      <div class="single-event <%= a.odd? ? "green" : "white" %>">
-        <%= render "events/event_preview", :event => event %>
-      </div>
-      <% a += 1%>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="events-header white">Registered past events</div>
-
-<div class="past-events">
-  <% a = 1; @user.attended_events.each do |event| %>
-    <% if event.date < Time.now %>
-      <div class="single-event <%= a.odd? ? "green" : "white" %>">
-        <%= render "events/event_preview", :event => event %>
-      </div>
-      <% a += 1%>
-    <% end %>
-  <% end %>
+  <div class="registered-events">
+    <div class="events-header white">Registered current events</div>
+    
+    <div class="current-events">
+      <% a = 1; @user.attended_events.current.each do |event| %>
+        <div class="single-event <%= a.odd? ? "green" : "white" %>">
+          <%= render "events/event_preview", :event => event %>
+        </div>
+        <% a += 1%>
+      <% end %>
+    </div>
+    
+    <div class="events-header white">Registered past events</div>
+    
+    <div class="past-events">
+      <% a = 1; @user.attended_events.past.each do |event| %>
+        <div class="single-event <%= a.odd? ? "green" : "white" %>">
+          <%= render "events/event_preview", :event => event %>
+        </div>
+        <% a += 1%>
+      <% end %>
+    </div>
+  </div>
 </div>
 

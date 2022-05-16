@@ -9,7 +9,7 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
   
-    <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></div>
+    <div><%= f.label :password %></div>
     <div><%= f.password_field :password, autocomplete: "new-password", placeholder: "6 characters minimum" %></div>
 
     <div><%= f.label :password_confirmation %></div>
@@ -19,11 +19,9 @@
     <div><%= f.password_field :current_password, autocomplete: "current-password" %></div>
   
     <div class="actions">
-      <%= f.submit "Update", data: { turbo: "false" } %>
+      <%= f.submit "Update", class: "form-btn green",data: { turbo: "false" } %>
     </div>
   <% end %>
-  
-  <div>Do you want to cancel your account?</div>
   
   <div><%= button_to "Delete", registration_path(resource_name), method: :delete, data: { turbo: "false" } %></div>
   

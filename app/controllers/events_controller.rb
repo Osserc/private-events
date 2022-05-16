@@ -72,8 +72,12 @@ class EventsController < ApplicationController
     end
 
     def check_organizer
-      return true if current_user.id == @event.user_id
-      return false
+      if user_signed_in?
+        return true if current_user.id == @event.user_id
+        return false
+      else
+        return false
+      end
     end
 
     def kick_out_outsider

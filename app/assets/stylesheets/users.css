@@ -38,3 +38,70 @@ input[type=checkbox] {
     padding: 2.5rem;
     border-radius: 25px;
 }
+
+.user-panel {
+    display: grid;
+    grid-template: [row1-start] "user-profile user-events" 150rem [row1-end]
+    [row2-start] "registered-events registered-events" 150rem [row2-end]
+    / 1fr 2fr;
+    gap: 1.2rem;
+}
+
+.user-profile {
+    grid-area: user-profile;
+}
+
+.user-events {
+    grid-area: user-events;
+}
+
+.registered-events {
+    grid-area: registered-events;
+}
+
+.user-panel .current-events {
+    max-height: 1fr;
+}
+
+.user-panel .past-events {
+    max-height: 1fr;
+}
+
+.random-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.user-panel button {
+    background-color: rgb(140, 236, 140);
+    color: white;
+    border: none;
+    font-size: 4rem;
+    border-radius: 25px;
+}
+
+.profile-username {
+    text-align: right;
+    font-size: 5rem;
+    font-weight: normal;
+}
+
+.form-btn.green {
+    width: 25rem;
+    height: 6.25rem;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    background-color: rgb(140, 236, 140);
+    color: white;
+    font-size: 4rem;
+}
+
+.edit-user {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}

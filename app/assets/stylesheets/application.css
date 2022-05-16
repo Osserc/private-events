@@ -27,8 +27,15 @@ body {
     font-size: 4rem;
     padding: 1.2rem;
     height: 100vh;
-    width: 100vw;
+    /* width: 100vw; */
     box-sizing: border-box;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .notice, .alert {
@@ -78,6 +85,9 @@ button, .button {
     height: 6.25rem;
     border-radius: 25px;
     font-weight: bold;
+}
+
+header button, header .button {
     z-index: 1;
 }
 
@@ -86,6 +96,7 @@ button, .button {
     color: rgb(140, 236, 140);
     border: none;
     font-size: 4rem;
+    border-radius: 25px;
 }
 
 .green .white button, .white button, .green .white .button, .white .button {
@@ -93,6 +104,7 @@ button, .button {
     color: white;
     border: none;
     font-size: 4rem;
+    border-radius: 25px;
 }
 
 .green {
@@ -145,7 +157,6 @@ input {
 
 .attendees-bloc, .invitees-bloc, .invitation-bloc {
     flex: 1;
-
 }
 
 .invitation-list {
@@ -193,7 +204,7 @@ input {
     display: none;
 }
 
-.form-btn {
+.form-btn.white {
     width: 25rem;
     border-radius: 25px;
     font-weight: bold;
@@ -205,6 +216,6 @@ input {
     grid-column-end: last-line;
 }
 
-.single-invitation + .form-btn {
+.form-btn {
     grid-column-start: 1;
 }
