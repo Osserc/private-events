@@ -27,7 +27,7 @@ body {
     font-size: 4rem;
     padding: 1.2rem;
     height: 100vh;
-    /* width: 100vw; */
+    width: 100vw;
     box-sizing: border-box;
     overflow: scroll;
     -ms-overflow-style: none;
@@ -180,6 +180,8 @@ input {
 
 .single-invitation {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(140, 236, 140);
     color: white;
     font-size: 6rem;
@@ -191,7 +193,7 @@ input {
 
 .invitation-list form {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 125px);
+    grid-template-columns: repeat(auto-fit, 200px);
     row-gap: 5rem;
     margin: 1.2rem 12.5rem;
     max-height: 100rem;

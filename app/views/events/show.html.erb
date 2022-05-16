@@ -35,7 +35,7 @@
         <%= f.hidden_field :path, :value => request.path %>
         <%= f.collection_check_boxes :invitees, list, :id, :username, { :item_wrapper_class => "invitee-choice" } do | single | %>
           <div class="single-invitation green">
-            <div><%= single.label %></div>
+            <div class="invitation-card"><%= single.label %></div>
             <% if @event.invitees.include?(single.object) %>
               <div><%= single.check_box({ checked: true }) %></div>
             <% else %>

@@ -3,7 +3,7 @@
     <div class="attendees-container">
         <% list.each do | attendee| %>
             <div class="single-attendee white">
-                - <%= link_to "#{attendee.username}", user_path(id: attendee.id) %>
+                <%= link_to "#{attendee.username}", user_path(id: attendee.id) %>
             </div>
         <% end %>
     </div>

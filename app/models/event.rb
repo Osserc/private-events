@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
     validates :title, :location, :date, :description, presence: true
+    validates :title, :location, length: { maximum: 30 }
 
     belongs_to :user
 
